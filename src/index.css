@@ -195,7 +195,7 @@ button {
 }
 
 #dashboard {
-    background-image: url(src/assets/images/Yellow_Manhart.jpg);
+    background-image: url(/src/assets/images/Yellow_Manhart.jpg);
     background-size: cover;
     height: 94.5vh;
     overflow-y: auto;
@@ -218,7 +218,7 @@ input {
 
 #wholehomepage {
     overflow-y: auto;
-    background-image: url(src/assets/images/WhiteBenz.jpeg);
+    background-image: url(/src/assets/images/WhiteBenz.jpeg);
     background-size: cover;
 }
 
