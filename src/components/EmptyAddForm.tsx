@@ -5,6 +5,7 @@ function EmptyAddForm(funcinherit: any) {
 
     console.log(funcinherit)
 
+    // @ts-expect-error: IFormInput exists
     const { register, handleSubmit } = useForm<IFormInput>()
 
     const makeDictobj2 = (carobj: object) => {
@@ -12,6 +13,7 @@ function EmptyAddForm(funcinherit: any) {
         return newCar
     }
 
+    // @ts-expect-error: IFormInput exists
     const onSubmit: SubmitHandler<IFormInput> = (newcar) => 
         {
             let newcar2: object = makeDictobj2(newcar)
@@ -19,18 +21,20 @@ function EmptyAddForm(funcinherit: any) {
             let newcarresponse: any = AddNewCar(newcar2)
             console.log(newcarresponse)
         } 
-
+        
   return (
+    
     <div id="carformdiv">
+        
             <form onSubmit={handleSubmit(onSubmit)} id="emptycarform">
                 <label>Car Make: </label>
-                <input ref={register} {...register("car_make")}/>
+                <input {...register("car_make")} name='car_make'/>           
                 <label>Car Model: </label>
-                <input ref={register} {...register ("car_model")}/>
+                <input {...register ("car_model")} name='car_model'/>
                 <label>Car Price: </label>
-                <input ref={register} {...register ("car_price")}/>
+                <input {...register ("car_price")} name='car_price'/>
                 <label>Car Year: </label>
-                <input ref={register} {...register ("car_year")}/>
+                <input {...register ("car_year")} name='car_year'/>
                 <input id="inputBut2"type="Submit"/>
                 <button id="cancelbutton" onClick={() => funcinherit.canceledit2()}>Cancel New Car Entry</button>
             </form>

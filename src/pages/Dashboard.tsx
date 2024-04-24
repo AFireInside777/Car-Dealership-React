@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Datatable from '../components/Datatable.tsx'
 import { DataForm } from '../components/DataForm.tsx'
 import {useState} from 'react'
@@ -10,10 +11,11 @@ import Modal2 from '../components/Modal2.tsx'
 export const Dashboard = ( ) => {
   let [form, showForm] = useState(<AddButton formfunc={showAddForm}/>)
   let [modal, modalSwitch] = useState(<></>)
+  
 
   function setForm (car: Array<object>)
     {
-      console.log(car) /*<---Try using Array<object> for this to see if it works*/
+      console.log(car) /
       showForm(old => old = <DataForm {...car} reversal={reverseForm} canceledit={cancelAddEdit}/>)
     }
 

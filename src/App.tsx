@@ -5,8 +5,6 @@ import routes from './config/routes'
 import { auth0Config } from './config/auth0.config';
 import { Auth0Provider } from '@auth0/auth0-react'
 
-console.log(window.location.origin)
-
 function App() {
 
   return (

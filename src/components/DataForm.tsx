@@ -1,3 +1,4 @@
+//@ts-nocheck
 import {useForm, SubmitHandler } from "react-hook-form"
 import { sendCarEdit } from "../helpers/ServerCalls"
 
@@ -24,6 +25,7 @@ export function DataForm( select: Array<object> ) {
     const onSubmit: SubmitHandler<IFormInput> = (cardata) => {
         let good = makeDictobj(cardata, select[0]) 
         let check = sendCarEdit(good)
+        console.log(check)
         select.reversal()
         }
     
@@ -31,13 +33,13 @@ export function DataForm( select: Array<object> ) {
         <div id="carform">
             <form onSubmit={handleSubmit(onSubmit)} id="editaddform">
                 <label>Car Make: </label>
-                <input ref={register} {...register("car_make")}/>
+                <input {...register("car_make")} name="car_make"/>
                 <label>Car Model: </label>
-                <input ref={register} {...register ("car_model")}/>
+                <input {...register ("car_model")} name="car_model"/>
                 <label>Car Price: </label>
-                <input ref={register} {...register ("car_price")}/>
+                <input {...register ("car_price")} name="car_price"/>
                 <label>Car Year: </label>
-                <input ref={register} {...register ("car_year")}/>
+                <input {...register ("car_year")} name="car_year"/>
                 <input id="inputBut"type="Submit"/>
                 <button id="cancelbutton" onClick={() => select.canceledit()}>Cancel Edits</button>
             </form>

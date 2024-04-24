@@ -1,5 +1,14 @@
 const token = 'c2067f8000bb6605cd08e38ca63f32b328237028b4543614'
 
+interface CarObject {
+    car_body_type: string,
+    car_fuel_type: string,
+    car_id: string,
+    car_make: string,
+    car_model: string,
+    car_price: string,
+    car_year: string
+}
 
 export const getCarList = async ( ) => {
     
@@ -25,8 +34,9 @@ export const getCarList = async ( ) => {
 
 
 
-export const sendCarEdit = async ( newpack: object) => {
+export const sendCarEdit = async ( newpack: CarObject) => {
 
+    console.log(newpack)
     const cid: string = newpack.car_id
    
     let response = await fetch(`https://car-dealership-api.onrender.com/api/editcar/${cid}`, 
@@ -46,7 +56,7 @@ export const sendCarEdit = async ( newpack: object) => {
         throw new Error('Failed to fetch data from the server')
     }
     let result = await response.json()
-    window.location.reload()
+    //window.location.reload()
     return result
 }
 
@@ -75,7 +85,7 @@ export const AddNewCar = async ( newcar: object ) =>
     
 
 
-export const DeleteTheCar = async (cardelete: object) =>
+export const DeleteTheCar = async (cardelete: CarObject) =>
 
     {
         let cid: string = cardelete.car_id
