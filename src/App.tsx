@@ -12,7 +12,7 @@ function App() {
       <Auth0Provider
         domain={auth0Config.domain}
         clientId={auth0Config.clientId}
-        authorizationParams={{redirect_uri: 'http://localhost:5173/dashboard'}}
+        authorizationParams={{redirect_uri: 'https://main--effortless-hotteok-f9cbae.netlify.app/dashboard'}}
         >
         <BrowserRouter>
           <Header/>
