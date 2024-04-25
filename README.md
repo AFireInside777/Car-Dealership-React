@@ -1,3 +1,6 @@
+This is a front end project that uses the code in this API Repository as its database: https://github.com/AFireInside777/Car-Dealership-API
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
