@@ -12,7 +12,7 @@ function App() {
       <Auth0Provider
         domain={auth0Config.domain}
         clientId={auth0Config.clientId}
-        authorizationParams={{redirect_uri: 'window.location.origin'}}
+        authorizationParams={{redirect_uri: 'https://tubular-genie-273434.netlify.app/dashboard'}}
         >
         <BrowserRouter>
           <Header/>
